@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="xunfeiPlugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>xunfeiPlugin</name>
+    <js-module name="xunfeiPlugin" src="www/xunfeiPlugin.js">
+        <clobbers target="navigator.xunfeiPlugin" />
+    </js-module>
+    
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="xunfeiPlugin">
+                <param name="ios-package" value="xunfeiPlugin" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/xunfeiPlugin.h" />
+        <source-file src="src/ios/xunfeiPlugin.m" />
+        <header-file src="src/ios/IATConfig.h" />
+        <source-file src="src/ios/IATConfig.m" />
+        <header-file src="src/ios/ISRDataHelper.h" />
+        <source-file src="src/ios/ISRDataHelper.m" />
+        
+        <source-file src="src/ios/iflyMSC.framework" target-dir="" />
+        <framework src="QuartzCore.framework" weak="true" />
+        <framework src="AudioToolbox.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="CoreGraphics.framework" weak="true" />
+        <framework src="Foundation.framework" weak="true" />
+        <framework src="AVFoundation.framework" weak="true" />
+        <framework src="UIKit.framework" weak="true" />
+        <framework src="CoreTelephony.framework" weak="true" />
+        <framework src="AddressBook.framework" weak="true" />
+        <framework src="CoreLocation.framework" weak="true" />
+        <framework src="libz.tbd" weak="true" />
+    </platform>
+</plugin>
